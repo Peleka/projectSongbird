@@ -1,0 +1,17 @@
+{
+  "json.schemas": [
+  
+  ],
+  "files.eol": "\n",
+
+  "eslint.alwaysShowStatus": true,
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  
+  "eslint.autoFixOnSave": true,
+  "prettier.disableLanguages": [
+      "js"
+  ]
+}
