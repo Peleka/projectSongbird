@@ -1,5 +1,7 @@
-$bg-color: pink;
+$bg-color: #222;
 
 body {
- background: $bg-color;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: $bg-color;
 }
