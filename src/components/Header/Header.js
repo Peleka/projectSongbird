@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.scss";
-import Rounds from "./Rounds/Rounds";
+// import Rounds from "./Rounds/Rounds";
 
 const Header = () => {
   return (
@@ -12,7 +12,14 @@ const Header = () => {
           <span>0</span>
         </h3>
       </div>
-      <Rounds />
+      <ul className="Raunds">
+        <li>Разминка</li>
+        <li>Воробьиные</li>
+        <li>Лесные птицы</li>
+        <li>Певчие птицы</li>
+        <li>Хищные птицы</li>
+        <li>Морские птицы</li>
+      </ul>
     </div>
   );
 };

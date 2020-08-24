@@ -5,8 +5,26 @@
 .Header_wrapper {
   display: flex;
   justify-content: space-between;
+  padding-top: 20px;
 }
 
 .Logo {
   width: 200px;
+}
+
+.Raunds {
+  display: flex;
+  justify-content: space-between;
+  background-color: #008967;
+  padding: 0;
+  border-radius: 5px;
+}
+
+.Raunds li {
+  list-style: none;
+  padding: 5px 52px ;
+
+  &:hover {
+    background-color: #7fca8b;
+  }
 }
