@@ -1,14 +1,17 @@
-import React from 'react'
-import './Rounds.scss'
+import React from "react";
+import "./Rounds.scss";
 
-const Rounds = props => {
-  const rounds = ["Разминка", "Воробьиные", "Лесные птицы", "Певчие птицы", "Хищные птицы", "Морские птицы"]
-  
-  return (
-    <ul className='Rounds'>
-     {rounds.join(' ')}// тут элементы массива внести
-    </ul>
-  )
-}
+const Rounds = () => {
+  const rounds = [
+    "Разминка",
+    "Воробьиные",
+    "Лесные птицы",
+    "Певчие птицы",
+    "Хищные птицы",
+    "Морские птицы",
+  ];
 
-export default Rounds
+  return <ul className="Rounds">{rounds.join(" ")}</ul>;
+};
+
+export default Rounds;

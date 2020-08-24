@@ -1,16 +1,13 @@
-import React, { Component } from "react";
-import '../scss/base.scss';
-import Header from './Header/Header'
+import React from "react";
+import "../scss/base.scss";
+import Header from "./Header/Header";
 
-
-class App extends Component {
-    render() {
-        return (
-            <div>
-                <Header />
-            </div>
-        );
-    }
-}
+const App = () => {
+  return (
+    <div>
+      <Header />
+    </div>
+  );
+};
 
 export default App;
