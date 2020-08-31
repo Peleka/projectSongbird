@@ -6,25 +6,51 @@ import './Question.scss';
 
 
 const Question = () => {
-  return (
-    <div>
-      <div className="Block_question">
-        <div  className="Placeholder" >
-          <img src="/src/assets/images/bird.jpg" alt="Plag" />
-        </div>
-        <div className="Audio">
-          <div className="Answer">
-            <h3>*******</h3>
-            <hr />
+  const renderDummy = () => {
+    return (
+      <div>
+        <div className="Block_question">
+          <div  className="Dummy" >
+            <img src="/src/assets/images/bird.jpg" alt="Plag" />
           </div>
-          <AudioPlayer 
-            src= "https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3" 
-          />
-
+          <div className="Audio">
+            <div className="Answer">
+              <h3>*******</h3>
+              <hr />
+            </div>
+              <AudioPlayer 
+                src= "https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3"
+              />
+            </div>
+          </div>
         </div>
-      </div>
+    )
+  }
 
-    </div>
+  const renderFull = () => {
+    return (
+      <div>
+        <div className="Block_question">
+          <div  className="Dummy" >
+            <img src="https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg" alt="Plag" />
+          </div>
+          <div className="Audio">
+            <div className="Answer">
+              <h3>Ворон</h3>
+              <hr />
+            </div>
+              <AudioPlayer 
+                src= "https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3"
+              />
+            </div>
+          </div>
+        </div>
+    )
+  }
+
+  return (
+    renderDummy()
+    // test renderFull()
   )
 }
 

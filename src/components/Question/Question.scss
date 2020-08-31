@@ -7,11 +7,13 @@ $br-block: #303030;
   display: flex;
 }
 
-.Placeholder {
+.Dummy {
+  width: 200px;
+  height: 155px;
   margin: 15px 50px 15px 30px;
 }
 
-.Placeholder img {
+.Dummy img {
   height: 100%;
   border-radius: 8px;
 }
