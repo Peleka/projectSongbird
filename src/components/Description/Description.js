@@ -5,16 +5,16 @@ import 'react-h5-audio-player/src/styles.scss';
 
 const Description = () => {
   return (
-    <div className="Block_description">
+    <div className="Description__block">
       <div className="Wrapper__flex">
-        <div className="Dird_description">
-          <img src="https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg" alt="Bird" /> 
+        <div className="Description__image">
+          <img src="https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg" alt="Ворон" /> 
         </div>
-        <div className="Audio">
+        <div>
           <div className="Answer">
             <h3>"Ворон"</h3>
             <div className="Species">
-            <h3>"Corvus corax"</h3>
+              <h3>"Corvus corax"</h3>
             </div>
           </div>
             <AudioPlayer 
@@ -23,7 +23,8 @@ const Description = () => {
         </div>
       </div>
       <p>
-        "Ворон – крупная птица. Длина тела достигает 70 сантиметров, размах крыльев – до полутора метров. Вороны населяют окрестности Тауэра. В Англии бытует поверье, что в день, когда черные вороны улетят от Тауэра, монархия рухнет."</p>
+        "Ворон – крупная птица. Длина тела достигает 70 сантиметров, размах крыльев – до полутора метров. Вороны населяют окрестности Тауэра. В Англии бытует поверье, что в день, когда черные вороны улетят от Тауэра, монархия рухнет."
+      </p>
     </div>
   )
 }

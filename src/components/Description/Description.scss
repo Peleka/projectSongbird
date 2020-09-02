@@ -1,6 +1,6 @@
 $br-block: #303030;
 
-.Block_description {
+.Description__block {
   max-width: 600px;
   margin: 20px;
   padding: 20px;
@@ -20,13 +20,13 @@ $br-block: #303030;
   border-bottom: 1px solid #fff;
 }
 
-.Dird_description {
+.Description__image {
   width: 200px;
   height: 155px;
   margin: 15px 50px 15px 30px;
 }
 
-.Dird_description img {
+.Description__image img {
   height: 100%;
   border-radius: 8px;
 }
