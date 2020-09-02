@@ -1,0 +1,10 @@
+.AnswerItem {
+  margin: 0px;
+  padding: 20px 0 20px 20px;
+  border-bottom: 1px solid grey;
+
+  &::before {
+    content: "\25CB";
+    padding-right: 10px;
+  }
+}

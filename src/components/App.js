@@ -3,13 +3,15 @@ import "../scss/base.scss";
 import Header from "./Header/Header";
 import Question from "./Question/Question";
 import Description from "./Description/Description";
+import AnswerList from "./Answers/AnswerList";
 
 const App = () => {
   return (
     <div>
       <Header />
       <Question />
-      <div>
+      <div className="Wrapper">
+        <AnswerList />
         <Description />
       </div>
     </div>

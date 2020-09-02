@@ -1,0 +1,12 @@
+$br-block: #303030;
+
+.AnswerList__block {
+  width: 400px;
+  margin: 20px;
+ padding: 0;
+  background: $br-block;
+  color: #fff;
+  border: 1px solid grey;
+  border-radius: 5px;
+  list-style: none;
+}
