@@ -3,9 +3,11 @@ $br-block: #303030;
 .Description__block {
   max-width: 600px;
   margin: 20px;
+  margin-right: 0;
   padding: 20px;
   background: $br-block;
   color: #fff;
+  border: 1px solid grey;
   border-radius: 5px;
 }
 

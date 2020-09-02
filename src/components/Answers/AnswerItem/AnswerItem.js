@@ -3,9 +3,7 @@ import './AnswerItem.scss';
 
 const AnswerItem = () => {
   return (
-    <div>
-      <li className="AnswerItem">Ворон</li>
-    </div>
+      <li className="AnswerItem correct">Ворон</li>
   )
 }
 
