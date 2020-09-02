@@ -7,6 +7,11 @@ const AnswerList = () => {
     <div>
       <ul className="AnswerList__block">
         <AnswerItem />
+        <AnswerItem />
+        <AnswerItem />
+        <AnswerItem />
+        <AnswerItem />
+        <AnswerItem />
       </ul>
     </div>
   )
