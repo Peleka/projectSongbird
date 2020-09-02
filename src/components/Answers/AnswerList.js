@@ -4,14 +4,14 @@ import AnswerItem from './AnswerItem/AnswerItem';
 
 const AnswerList = () => {
   return (
-      <ul className="AnswerList__block">
-        <AnswerItem />
-        <AnswerItem />
-        <AnswerItem />
-        <AnswerItem />
-        <AnswerItem />
-        <AnswerItem />
-      </ul>
+    <ul className="AnswerList__block">
+      <AnswerItem />
+      <AnswerItem />
+      <AnswerItem />
+      <AnswerItem />
+      <AnswerItem />
+      <AnswerItem />
+    </ul>
   )
 }
 

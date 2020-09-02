@@ -3,7 +3,10 @@ import './AnswerItem.scss';
 
 const AnswerItem = () => {
   return (
-      <li className="AnswerItem correct">Ворон</li>
+    <li className="AnswerItem">
+      <span className="circle correct"></span>
+      Ворон
+    </li>
   )
 }
 
