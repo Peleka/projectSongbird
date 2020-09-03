@@ -4,6 +4,7 @@ import Header from "./Header/Header";
 import Question from "./Question/Question";
 import Description from "./Description/Description";
 import AnswerList from "./Answers/AnswerList";
+import Button from "./Button/Button";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <AnswerList />
         <Description />
       </div>
+      <Button />
     </div>
   );
 };
