@@ -6,14 +6,14 @@ import 'react-h5-audio-player/src/styles.scss';
 const Description = () => {
   return (
     <div className="Description__block">
-      <div className="Wrapper__flex">
+      <div className="Description__flex">
         <div className="Description__image">
           <img src="https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg" alt="Ворон" /> 
         </div>
         <div>
-          <div className="Answer">
+          <div className="Description__answer">
             <h3>"Ворон"</h3>
-            <div className="Species">
+            <div className="Description__species">
               <h3>"Corvus corax"</h3>
             </div>
           </div>

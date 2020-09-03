@@ -4,7 +4,7 @@ import AnswerItem from './AnswerItem/AnswerItem';
 
 const AnswerList = () => {
   return (
-    <ul className="AnswerList__block">
+    <ul className="AnswerList">
       <AnswerItem />
       <AnswerItem />
       <AnswerItem />

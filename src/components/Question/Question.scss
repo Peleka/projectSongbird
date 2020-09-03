@@ -1,19 +1,22 @@
 $br-block: #303030;
 
-.Block_question {
-  background: $br-block;
-  border-radius: 5px;
-  color: #fff;
-  display: flex;
-}
+.Question {
 
-.Dummy {
-  width: 200px;
-  height: 155px;
-  margin: 15px 50px 15px 30px;
-}
+  &__block{
+    background: $br-block;
+    border-radius: 5px;
+    color: #fff;
+    display: flex;
+  }
 
-.Dummy img {
-  height: 100%;
-  border-radius: 8px;
+  &__dummy {
+    width: 200px;
+    height: 155px;
+    margin: 15px 50px 15px 30px;
+
+    img {
+      height: 100%;
+      border-radius: 8px;
+    }
+  }
 }
