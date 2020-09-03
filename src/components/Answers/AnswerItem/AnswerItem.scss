@@ -7,12 +7,12 @@
     content: "\25CF";
     padding-right: 10px;
   }
-}
+  
+  .correct {
+    color: green;
+  }
 
-.correct {
-  color: green;
-}
-
-.incorrect {
-  color: red;
+  .incorrect {
+    color: red;
+  }
 }
