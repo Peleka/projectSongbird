@@ -9,8 +9,8 @@ const Question = () => {
   const rightAnswer = true;
   return (
     <div>
-      <div className="Block_question">
-        <div  className="Dummy">
+      <div className="Question__block">
+        <div  className="Question__dummy">
           {
             rightAnswer
             ? <img src="https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg" alt="Bird" />
