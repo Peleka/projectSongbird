@@ -6,30 +6,24 @@ import './Question.scss';
 
 
 const Question = () => {
-  const rightAnswer = true;
+  const rightAnswer = false;
   return (
     <div>
       <div className="Question__block">
-        <div  className="Question__dummy">
+        <div  className="Question__dummyImage">
           {
             rightAnswer
             ? <img src="https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg" alt="Bird" />
             : <img src="/src/assets/images/bird.jpg" alt="Plag" />
           }
-          
         </div>
-        <div className="Audio">
-          <div className="Answer">
-            <h3>{rightAnswer ? "Ворон" : "*******"}</h3>
-            <hr />
-          </div>
+        <div className="Question__dummyAnswer">
+          <h3>{rightAnswer ? "Ворон" : "*******"}</h3>
           <AudioPlayer 
             src= "https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3" 
           />
-
         </div>
       </div>
-
     </div>
   )
 }
