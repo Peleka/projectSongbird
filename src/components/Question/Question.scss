@@ -9,7 +9,7 @@ $br-block: #303030;
     display: flex;
   }
 
-  &__dummy {
+  &__dummyImage {
     width: 200px;
     height: 155px;
     margin: 15px 50px 15px 30px;
@@ -17,6 +17,16 @@ $br-block: #303030;
     img {
       height: 100%;
       border-radius: 8px;
+    }
+  }
+
+  &__dummyAnswer {
+    width: 100%;
+    padding-right: 20px;
+
+    h3 {
+      padding-bottom: 20px;
+      border-bottom: 1px solid grey;
     }
   }
 }
