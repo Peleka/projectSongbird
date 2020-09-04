@@ -2,9 +2,10 @@ import React from "react";
 import './Description.scss';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/src/styles.scss';
+import '../../styles/AudioPlayer.scss';
 
 const Description = () => {
-  const chooseBird = true
+  const chooseBird = false
   return (
     <div className="Description__block">
       { chooseBird 
