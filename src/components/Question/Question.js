@@ -2,7 +2,7 @@ import React from "react";
 import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
 import 'react-h5-audio-player/src/styles.scss';
 import './Question.scss';
-import './AudioPlayer.scss';
+import '../../styles/AudioPlayer.scss';
 
 const Question = () => {
   const rightAnswer = false;
