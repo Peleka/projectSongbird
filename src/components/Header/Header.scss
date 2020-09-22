@@ -1,36 +1,30 @@
 .Header {
   color: #fff;
-  font-weight: normal;
+}
 
-  h3 {
-    font-weight: normal;
-  }
+.Header_wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
 
-  &__wrapper {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 10px 0;
-  }
+.Logo {
+  width: 200px;
+}
 
-  &__logo {
-    width: 200px;
-  }
+.Rounds {
+  display: flex;
+  justify-content: space-between;
+  background-color: #008967;
+  padding: 0px;
+  border-radius: 5px;
+}
 
-  &__rounds {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    background-color: #15a07d;
-    padding: 0px;
-    border-radius: 5px;
+.Rounds li {
+  list-style: none;
+  padding: 5px 52px ;
 
-    li {
-      list-style-type: none;
-      padding: 7px 25px ;
-    
-      &:hover {
-        background-color: #74dfb2;
-      }
-    }
+  &:hover {
+    background-color: #7fca8b;
   }
 }

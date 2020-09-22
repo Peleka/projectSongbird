@@ -1,32 +1,19 @@
 $br-block: #303030;
 
-.Question {
+.Block_question {
+  background: $br-block;
+  border-radius: 5px;
+  color: #fff;
+  display: flex;
+}
 
-  &__block{
-    background: $br-block;
-    border-radius: 5px;
-    color: #fff;
-    display: flex;
-  }
+.Dummy {
+  width: 200px;
+  height: 155px;
+  margin: 15px 50px 15px 30px;
+}
 
-  &__dummyImage {
-    width: 200px;
-    height: 155px;
-    margin: 15px 50px 15px 30px;
-
-    img {
-      height: 100%;
-      border-radius: 8px;
-    }
-  }
-
-  &__dummyAnswer {
-    width: 100%;
-    padding-right: 20px;
-
-    h3 {
-      padding-bottom: 20px;
-      border-bottom: 1px solid grey;
-    }
-  }
+.Dummy img {
+  height: 100%;
+  border-radius: 8px;
 }

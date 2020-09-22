@@ -4,11 +4,11 @@ import "./Header.scss";
 const Header = () => {
   return (
     <div className="Header">
-      <div className="Header__wrapper">
-        <img className="Header__logo" src="/src/assets/images/logo.svg" alt="Logo" />
+      <div className="Header_wrapper">
+        <img className="Logo" src="/src/assets/images/logo.svg" alt="Logo" />
         <h3>Score: 0</h3>
       </div>
-      <ul className="Header__rounds">
+      <ul className="Rounds">
         <li>Разминка</li>
         <li>Воробьиные</li>
         <li>Лесные птицы</li>
