@@ -27,8 +27,8 @@
     li {
       list-style-type: none;
       padding: 7px 25px ;
-    
-      &:hover {
+
+      &.active {
         background-color: #74dfb2;
       }
     }
