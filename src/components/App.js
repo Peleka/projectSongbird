@@ -5,7 +5,7 @@ import Question from "./Question/Question";
 import Description from "./Description/Description";
 import AnswerList from "./Answers/AnswerList";
 import Button from "./Button/Button";
-import ResultPage from "./ResultPage/ResultPage"
+import ResultPage from "./ResultPage/ResultPage";
 
 const App = () => {
 
@@ -15,22 +15,20 @@ const App = () => {
 
   return (
     <div>
-      <Header 
+      <Header
         score={15}
-        currentQuestionIndex={2}
-      />
+        currentQuestionIndex={2} />
       <Question />
       <div className="Wrapper">
         <AnswerList />
         <Description />
       </div>
       <Button />
-      <ResultPage 
+      <ResultPage
         score={15}
-        onRetry={retryHandler}
-      />
+        onRetry={retryHandler} />
     </div>
   );
-};
+}
 
 export default App;

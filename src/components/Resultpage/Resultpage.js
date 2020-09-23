@@ -10,6 +10,6 @@ const ResultPage = (props) => {
       <button onClick={props.onRetry} className="Repeat">Попробовать еще раз!</button>
     </div>
   );
-};
+}
 
 export default ResultPage;
