@@ -1,6 +1,6 @@
 import React from "react";
-import './AnswerList.scss';
-import AnswerItem from './AnswerItem/AnswerItem';
+import "./AnswerList.scss";
+import AnswerItem from "./AnswerItem/AnswerItem";
 
 const AnswerList = () => {
   return (
@@ -12,7 +12,7 @@ const AnswerList = () => {
       <AnswerItem />
       <AnswerItem />
     </ul>
-  )
-}
+  );
+};
 
 export default AnswerList;
