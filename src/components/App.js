@@ -5,13 +5,13 @@ import Question from "./Question/Question";
 import Description from "./Description/Description";
 import AnswerList from "./Answers/AnswerList";
 import Button from "./Button/Button";
-import ResultPage from "./ResultPage/ResultPage";
+import ResultPage from "./ResultPage/ResultPage"
 
 const App = () => {
 
- retryHandler = () => {
+  function retryHandler() {
     console.log("Тут должна быть логика");
-  };
+  }
 
   return (
     <div>
@@ -27,7 +27,7 @@ const App = () => {
       <Button />
       <ResultPage 
         score={15}
-        onRetry={this.retryHandler.bind()}
+        onRetry={retryHandler}
       />
     </div>
   );
