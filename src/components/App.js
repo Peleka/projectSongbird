@@ -5,6 +5,7 @@ import Question from "./Question/Question";
 import Description from "./Description/Description";
 import AnswerList from "./Answers/AnswerList";
 import Button from "./Button/Button";
+import Resultpage from "./Resultpage/Resultpage";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Description />
       </div>
       <Button />
+      <Resultpage score={15} />
     </div>
   );
 };
