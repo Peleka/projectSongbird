@@ -1,14 +1,15 @@
 import React from "react";
-import "./Resultpage.scss";
+import "./ResultPage.scss";
 
-const Resultpage = (props) => {
+const ResultPage = (props) => {
+
   return (
-    <div className="Resultpage">
+    <div className="ResultPage">
       <h1>Поздравляем!</h1>
       <p>Вы прошли викторину и набрали {props.score} из 30 возможных баллов</p>
-      <button className="Repeat">Попробовать еще раз!</button>
+      <button onClick={props.onRetry} className="Repeat">Попробовать еще раз!</button>
     </div>
   );
 };
 
-export default Resultpage;
+export default ResultPage;
