@@ -5,17 +5,23 @@ import Question from "./Question/Question";
 import Description from "./Description/Description";
 import AnswerList from "./Answers/AnswerList";
 import Button from "./Button/Button";
+import FinishPage from "./FinishPage/FinishPage";
 
 const App = () => {
+  const retryHandler = () => {
+    console.log("Тут должна быть логика");
+  };
+
   return (
     <div>
-      <Header />
+      <Header score={15} currentQuestionIndex={2} />
       <Question />
       <div className="Wrapper">
         <AnswerList />
         <Description />
       </div>
       <Button />
+      <FinishPage score={15} onRetry={retryHandler} />
     </div>
   );
 };
