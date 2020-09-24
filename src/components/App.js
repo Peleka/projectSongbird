@@ -5,12 +5,12 @@ import Question from "./Question/Question";
 import Description from "./Description/Description";
 import AnswerList from "./Answers/AnswerList";
 import Button from "./Button/Button";
-import FinishPage from "./FinishPage/FinishPage"
+import FinishPage from "./FinishPage/FinishPage";
 
 const App = () => {
-  function retryHandler() {
+  const retryHandler = () => {
     console.log("Тут должна быть логика");
-  }
+  };
 
   return (
     <div>
