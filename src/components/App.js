@@ -16,12 +16,19 @@ const App = () => {
     console.log("Тут должна быть логика");
   };
 
+  const onAnswerClickHandler = (answerId) => {
+    console.log("AnswerId: ", answerId);
+  };
+
   return (
     <div>
       <Header score={score} currentRoundIndex={currentRoundIndex} />
       <Question />
       <div className="Wrapper">
-        <AnswerList answers={birdsData[currentRoundIndex]} />
+        <AnswerList
+          answers={birdsData[currentRoundIndex]}
+          onAnswerClick={onAnswerClickHandler}
+        />
         <Description />
       </div>
       <Button />
