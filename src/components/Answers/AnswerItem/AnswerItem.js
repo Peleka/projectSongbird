@@ -1,11 +1,11 @@
 import React from "react";
 import "./AnswerItem.scss";
 
-const AnswerItem = () => {
+const AnswerItem = (props) => {
   return (
     <li className="AnswerItem">
       <span className="circle correct"></span>
-      Ворон
+      {props.answer.name}
     </li>
   );
 };

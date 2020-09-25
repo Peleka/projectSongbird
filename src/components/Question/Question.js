@@ -5,7 +5,7 @@ import "./Question.scss";
 import "../../styles/AudioPlayer.scss";
 
 const Question = () => {
-  const rightAnswer = false;
+  const rightAnswer = true;
   return (
     <div>
       <div className="Question__block">

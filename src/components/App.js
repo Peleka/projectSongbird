@@ -6,22 +6,35 @@ import Description from "./Description/Description";
 import AnswerList from "./Answers/AnswerList";
 import Button from "./Button/Button";
 import FinishPage from "./FinishPage/FinishPage";
+import birdsData from "../Data/BirdsData";
+
+console.log(birdsData);
 
 const App = () => {
+  const state = {
+    score: 0,
+    currentQuestionIndex: 0,
+  };
+
   const retryHandler = () => {
     console.log("Тут должна быть логика");
   };
 
   return (
     <div>
-      <Header score={15} currentQuestionIndex={2} />
+      <Header
+        score={state.score}
+        currentQuestionIndex={state.currentQuestionIndex}
+      />
       <Question />
       <div className="Wrapper">
-        <AnswerList />
+        <AnswerList 
+          
+        />
         <Description />
       </div>
       <Button />
-      <FinishPage score={15} onRetry={retryHandler} />
+      <FinishPage score={state.score} onRetry={retryHandler} />
     </div>
   );
 };
