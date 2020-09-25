@@ -8,7 +8,7 @@ import Button from "./Button/Button";
 import FinishPage from "./FinishPage/FinishPage";
 import birdsData from "../Data/BirdsData";
 
-console.log(birdsData);
+console.log(birdsData[0]);
 
 const App = () => {
   const state = {
@@ -28,9 +28,7 @@ const App = () => {
       />
       <Question />
       <div className="Wrapper">
-        <AnswerList 
-          
-        />
+        <AnswerList answers={birdsData[0]} />
         <Description />
       </div>
       <Button />
