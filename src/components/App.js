@@ -9,20 +9,19 @@ import FinishPage from "./FinishPage/FinishPage";
 import birdsData from "../Data/BirdsData";
 
 const App = () => {
-  const [score, setScore] = useState(0);
-  const [currentRoundIndex, setCurrentRoundIndex] = useState(0);
+  const [score, setScore] = useState(0); //набранные очки
+  const [currentRoundIndex, setCurrentRoundIndex] = useState(0); //индекс выбранного раунда
 
-  function retryHandler() {
+  const retryHandler = () => {
     console.log("Тут должна быть логика");
-  }
+  };
 
-  console.log(birdsData[currentRoundIndex]);
   return (
     <div>
-      <Header score={score} currentRoundIndex={birdsData[currentRoundIndex]} />
+      <Header score={score} currentRoundIndex={currentRoundIndex} />
       <Question />
       <div className="Wrapper">
-        <AnswerList answers={birdsData[0]} />
+        <AnswerList answers={birdsData[currentRoundIndex]} />
         <Description />
       </div>
       <Button />
