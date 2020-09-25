@@ -6,7 +6,7 @@ const AnswerList = (props) => {
   return (
     <ul className="AnswerList">
       {props.answers.map((answer, index) => {
-        <AnswerItem key={index} answer={answer} />;
+        return <AnswerItem key={index} answer={answer} />;
       })}
     </ul>
   );

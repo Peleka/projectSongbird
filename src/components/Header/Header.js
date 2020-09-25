@@ -13,7 +13,7 @@ const nameRounds = [
 const Header = (props) => {
   const listRounds = nameRounds.map((nameRound, index) => {
     let className = "";
-    if (index === props.currentQuestionIndex) {
+    if (index === props.currentRoundIndex) {
       className = "active";
     }
     return (

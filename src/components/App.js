@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../scss/base.scss";
 import Header from "./Header/Header";
 import Question from "./Question/Question";
@@ -8,31 +8,25 @@ import Button from "./Button/Button";
 import FinishPage from "./FinishPage/FinishPage";
 import birdsData from "../Data/BirdsData";
 
-console.log(birdsData[0]);
-
 const App = () => {
-  const state = {
-    score: 0,
-    currentQuestionIndex: 0,
-  };
+  const [score, setScore] = useState(0);
+  const [currentRoundIndex, setCurrentRoundIndex] = useState(0);
 
-  const retryHandler = () => {
+  function retryHandler() {
     console.log("Тут должна быть логика");
-  };
+  }
 
+  console.log(birdsData[currentRoundIndex]);
   return (
     <div>
-      <Header
-        score={state.score}
-        currentQuestionIndex={state.currentQuestionIndex}
-      />
+      <Header score={score} currentRoundIndex={birdsData[currentRoundIndex]} />
       <Question />
       <div className="Wrapper">
         <AnswerList answers={birdsData[0]} />
         <Description />
       </div>
       <Button />
-      <FinishPage score={state.score} onRetry={retryHandler} />
+      <FinishPage score={score} onRetry={retryHandler} />
     </div>
   );
 };
