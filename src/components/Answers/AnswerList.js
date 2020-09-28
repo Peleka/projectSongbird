@@ -3,6 +3,7 @@ import "./AnswerList.scss";
 import AnswerItem from "./AnswerItem/AnswerItem";
 
 const AnswerList = (props) => {
+  
   return (
     <ul className="AnswerList">
       {props.answers.map((answer, index) => {
@@ -11,7 +12,7 @@ const AnswerList = (props) => {
             key={index}
             answer={answer}
             onAnswerClick={props.onAnswerClick}
-            state={props.state ? props.state.answer : null}
+            state={props.state ? props.state[answer.id] : null}
           />
         );
       })}

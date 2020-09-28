@@ -9,8 +9,8 @@ import FinishPage from "./FinishPage/FinishPage";
 import birdsData from "../Data/BirdsData";
 
 const App = () => {
-  const rightAnswerId = Math.ceil(Math.random()*6)
-  const [answerState, setAnswerState] = useState({}) //инфа о текущем клике пользователя
+  const rightAnswerId = 4 //Math.ceil(Math.random()*6)
+  const [answerState, setAnswerState] = useState(null) //инфа о текущем клике пользователя
   const [score, setScore] = useState(0); //набранные очки
   const [currentRoundIndex, setCurrentRoundIndex] = useState(0); //индекс выбранного раунда
 
@@ -23,18 +23,19 @@ const App = () => {
 
   const onAnswerClickHandler = (answerId) => {
     const answerStateClone = Object.assign({}, answerState)
-
+    console.log(answerStateClone)
     if(answerId === rightAnswerId) {
       answerStateClone[answerId] = "success"
-      setAnswerState(answerStateClone)  
+      setAnswerState(answerStateClone)
     } else {
       answerStateClone[answerId] = "error"
-      setAnswerState(answerStateClone) 
+      setAnswerState(answerStateClone)
     }
     console.log("answerId", answerId);
   };
 
-  console.log(answerState)
+  
+
   return (
     <div>
       <Header score={score} currentRoundIndex={currentRoundIndex} />
