@@ -9,17 +9,32 @@ import FinishPage from "./FinishPage/FinishPage";
 import birdsData from "../Data/BirdsData";
 
 const App = () => {
+  const rightAnswerId = Math.ceil(Math.random()*6)
+  const [answerState, setAnswerState] = useState({}) //инфа о текущем клике пользователя
   const [score, setScore] = useState(0); //набранные очки
   const [currentRoundIndex, setCurrentRoundIndex] = useState(0); //индекс выбранного раунда
+
+
+  console.log("rightAnswerId: ", rightAnswerId)
 
   const retryHandler = () => {
     console.log("Тут должна быть логика");
   };
 
   const onAnswerClickHandler = (answerId) => {
-    console.log("AnswerId: ", answerId);
+    const answerStateClone = Object.assign({}, answerState)
+
+    if(answerId === rightAnswerId) {
+      answerStateClone[answerId] = "success"
+      setAnswerState(answerStateClone)  
+    } else {
+      answerStateClone[answerId] = "error"
+      setAnswerState(answerStateClone) 
+    }
+    console.log("answerId", answerId);
   };
 
+  console.log(answerState)
   return (
     <div>
       <Header score={score} currentRoundIndex={currentRoundIndex} />
@@ -28,6 +43,7 @@ const App = () => {
         <AnswerList
           answers={birdsData[currentRoundIndex]}
           onAnswerClick={onAnswerClickHandler}
+          state={answerState}
         />
         <Description />
       </div>
