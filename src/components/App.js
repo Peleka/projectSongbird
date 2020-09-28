@@ -9,32 +9,29 @@ import FinishPage from "./FinishPage/FinishPage";
 import birdsData from "../Data/BirdsData";
 
 const App = () => {
-  const rightAnswerId = 4 //Math.ceil(Math.random()*6)
-  const [answerState, setAnswerState] = useState(null) //инфа о текущем клике пользователя
+  const rightAnswerId = 4; //Math.ceil(Math.random()*6)
+  const [answerState, setAnswerState] = useState(null); //инфа о текущем клике пользователя
   const [score, setScore] = useState(0); //набранные очки
   const [currentRoundIndex, setCurrentRoundIndex] = useState(0); //индекс выбранного раунда
 
-
-  console.log("rightAnswerId: ", rightAnswerId)
+  console.log("rightAnswerId: ", rightAnswerId);
 
   const retryHandler = () => {
     console.log("Тут должна быть логика");
   };
 
   const onAnswerClickHandler = (answerId) => {
-    const answerStateClone = Object.assign({}, answerState)
-    console.log(answerStateClone)
-    if(answerId === rightAnswerId) {
-      answerStateClone[answerId] = "success"
-      setAnswerState(answerStateClone)
+    const answerStateClone = Object.assign({}, answerState);
+    console.log(answerStateClone);
+    if (answerId === rightAnswerId) {
+      answerStateClone[answerId] = "success";
+      setAnswerState(answerStateClone);
     } else {
-      answerStateClone[answerId] = "error"
-      setAnswerState(answerStateClone)
+      answerStateClone[answerId] = "error";
+      setAnswerState(answerStateClone);
     }
     console.log("answerId", answerId);
   };
-
-  
 
   return (
     <div>
