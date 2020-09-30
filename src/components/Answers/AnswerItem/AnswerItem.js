@@ -1,19 +1,18 @@
 import React from "react";
-import classes from "./AnswerItem.module.scss";
+import "./AnswerItem.scss";
 
 const AnswerItem = (props) => {
-  let cls = [classes.AnswerItem];
-  console.log("props.state", props.state);
-  if (props.state) {
-    cls.push(classes[props.state]);
+  let className = "AnswerItem";
+  if (props.isMarked) {
+    className = `AnswerItem ${props.isMarked}`;
   }
 
   return (
     <li
-      className={cls.join(" ")}
+      className={className}
       onClick={() => props.onAnswerClick(props.answer.id)}
     >
-      <span className={classes.circle}></span>
+      <span className="circle"></span>
       {props.answer.name}
     </li>
   );

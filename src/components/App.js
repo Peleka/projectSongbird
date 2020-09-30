@@ -9,8 +9,10 @@ import FinishPage from "./FinishPage/FinishPage";
 import birdsData from "../Data/BirdsData";
 
 const App = () => {
-  const rightAnswerId = 4; //Math.ceil(Math.random()*6)
-  const [answerState, setAnswerState] = useState(null); //инфа о текущем клике пользователя
+  const [rightAnswerId, setRightAnswerId] = useState(
+    Math.ceil(Math.random() * 6)
+  );
+  const [isMarked, setIsMarked] = useState(null); //инфа о текущем клике пользователя
   const [score, setScore] = useState(0); //набранные очки
   const [currentRoundIndex, setCurrentRoundIndex] = useState(0); //индекс выбранного раунда
 
@@ -21,14 +23,14 @@ const App = () => {
   };
 
   const onAnswerClickHandler = (answerId) => {
-    const answerStateClone = Object.assign({}, answerState);
-    console.log(answerStateClone);
+    const isMarkedClone = Object.assign({}, isMarked);
     if (answerId === rightAnswerId) {
-      answerStateClone[answerId] = "success";
-      setAnswerState(answerStateClone);
+      isMarkedClone[answerId] = "success";
+      setIsMarked(isMarkedClone);
+      setRightAnswerId(Math.ceil(Math.random() * 6));
     } else {
-      answerStateClone[answerId] = "error";
-      setAnswerState(answerStateClone);
+      isMarkedClone[answerId] = "error";
+      setIsMarked(isMarkedClone);
     }
     console.log("answerId", answerId);
   };
@@ -41,7 +43,7 @@ const App = () => {
         <AnswerList
           answers={birdsData[currentRoundIndex]}
           onAnswerClick={onAnswerClickHandler}
-          state={answerState}
+          isMarked={isMarked}
         />
         <Description />
       </div>
