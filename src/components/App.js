@@ -12,29 +12,24 @@ const App = () => {
   const [rightAnswerId, setRightAnswerId] = useState(
     Math.ceil(Math.random() * 6)
   );
-  const [isMarked, setIsMarked] = useState(null); //инфа о текущем клике пользователя
-  const [score, setScore] = useState(0); //набранные очки
-  const [currentRoundIndex, setCurrentRoundIndex] = useState(0); //индекс выбранного раунда
-
-  console.log("rightAnswerId: ", rightAnswerId);
+  const [isMarked, setIsMarked] = useState(null); // инфа о текущем клике пользователя
+  const [score, setScore] = useState(0); // набранные очки
+  const [currentRoundIndex, setCurrentRoundIndex] = useState(0); // индекс выбранного раунда
 
   const retryHandler = () => {
     console.log("Тут должна быть логика");
   };
 
   const onAnswerClickHandler = (answerId) => {
-    const isMarkedClone = Object.assign({}, isMarked);
-    if (answerId === rightAnswerId) {
-      isMarkedClone[answerId] = "success";
+    const isMarkedClone = { ...isMarked };
+    if (answerId) {
+      isMarkedClone[answerId] = true;
       setIsMarked(isMarkedClone);
-      setRightAnswerId(Math.ceil(Math.random() * 6));
     } else {
-      isMarkedClone[answerId] = "error";
+      isMarkedClone[answerId] = false;
       setIsMarked(isMarkedClone);
     }
-    console.log("answerId", answerId);
   };
-
   return (
     <div>
       <Header score={score} currentRoundIndex={currentRoundIndex} />
@@ -44,6 +39,7 @@ const App = () => {
           answers={birdsData[currentRoundIndex]}
           onAnswerClick={onAnswerClickHandler}
           isMarked={isMarked}
+          rightAnswerId={rightAnswerId}
         />
         <Description />
       </div>

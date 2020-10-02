@@ -12,6 +12,7 @@ const AnswerList = (props) => {
             answer={answer}
             onAnswerClick={props.onAnswerClick}
             isMarked={props.isMarked ? props.isMarked[answer.id] : null}
+            isCorrect={props.rightAnswerId === answer.id}
           />
         );
       })}
