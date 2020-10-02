@@ -21,7 +21,7 @@ const App = () => {
   };
 
   const onAnswerClickHandler = (answerId) => {
-    const isMarkedClone = {...isMarked};
+    const isMarkedClone = { ...isMarked };
     isMarkedClone[answerId] = true;
     setIsMarked(isMarkedClone);
   };
