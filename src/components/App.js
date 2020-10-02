@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../scss/base.scss";
 import Header from "./Header/Header";
 import Question from "./Question/Question";
@@ -6,22 +6,41 @@ import Description from "./Description/Description";
 import AnswerList from "./Answers/AnswerList";
 import Button from "./Button/Button";
 import FinishPage from "./FinishPage/FinishPage";
+import birdsData from "../Data/BirdsData";
 
 const App = () => {
+  const [rightAnswerId, setRightAnswerId] = useState(
+    Math.ceil(Math.random() * 6)
+  );
+  const [isMarked, setIsMarked] = useState({}); // инфа о текущем клике пользователя
+  const [score, setScore] = useState(0); // набранные очки
+  const [currentRoundIndex, setCurrentRoundIndex] = useState(0); // индекс выбранного раунда
+
   const retryHandler = () => {
     console.log("Тут должна быть логика");
   };
 
+  const onAnswerClickHandler = (answerId) => {
+    const isMarkedClone = { ...isMarked };
+    isMarkedClone[answerId] = true;
+    setIsMarked(isMarkedClone);
+  };
+
   return (
     <div>
-      <Header score={15} currentQuestionIndex={2} />
+      <Header score={score} currentRoundIndex={currentRoundIndex} />
       <Question />
       <div className="Wrapper">
-        <AnswerList />
+        <AnswerList
+          answers={birdsData[currentRoundIndex]}
+          onAnswerClick={onAnswerClickHandler}
+          isMarked={isMarked}
+          rightAnswerId={rightAnswerId}
+        />
         <Description />
       </div>
       <Button />
-      <FinishPage score={15} onRetry={retryHandler} />
+      <FinishPage score={score} onRetry={retryHandler} />
     </div>
   );
 };
