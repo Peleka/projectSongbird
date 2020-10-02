@@ -11,7 +11,7 @@ const AnswerList = (props) => {
             key={index}
             answer={answer}
             onAnswerClick={props.onAnswerClick}
-            isMarked={props.isMarked ? props.isMarked[answer.id] : null}
+            isMarked={!!props.isMarked[answer.id]}
             isCorrect={props.rightAnswerId === answer.id}
           />
         );
