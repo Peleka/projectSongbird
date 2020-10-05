@@ -12,6 +12,7 @@ const App = () => {
   const [rightAnswerId, setRightAnswerId] = useState(
     Math.ceil(Math.random() * 6)
   );
+  const [currentAnswerId, setCurrentAnswerId] = useState(null);
   const [isMarked, setIsMarked] = useState({}); // инфа о текущем клике пользователя
   const [score, setScore] = useState(0); // набранные очки
   const [currentRoundIndex, setCurrentRoundIndex] = useState(0); // индекс выбранного раунда
@@ -24,8 +25,11 @@ const App = () => {
     const isMarkedClone = { ...isMarked };
     isMarkedClone[answerId] = true;
     setIsMarked(isMarkedClone);
+
+    setCurrentAnswerId(answerId);
   };
 
+  console.log("selectedAnswer", birdsData[currentRoundIndex][currentAnswerId]);
   return (
     <div>
       <Header score={score} currentRoundIndex={currentRoundIndex} />
@@ -37,7 +41,13 @@ const App = () => {
           isMarked={isMarked}
           rightAnswerId={rightAnswerId}
         />
-        <Description />
+        <Description
+          selectedAnswer={
+            currentAnswerId
+              ? birdsData[currentRoundIndex][currentAnswerId]
+              : null
+          }
+        />
       </div>
       <Button />
       <FinishPage score={score} onRetry={retryHandler} />
