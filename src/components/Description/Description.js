@@ -7,7 +7,7 @@ import "../../styles/AudioPlayer.scss";
 const Description = (props) => {
   return (
     <div className="Description__block">
-      {props.selectedAnswer === null ? (
+      {!props.selectedAnswer ? (
         <div>Послушайте плеер. Выберите птицу из списка</div>
       ) : (
         <div>

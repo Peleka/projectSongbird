@@ -26,13 +26,9 @@ const App = () => {
     isMarkedClone[answerId] = true;
     setIsMarked(isMarkedClone);
 
-    const num = answerId - 1
-    setCurrentAnswerId(num);
-    console.log("answerId", answerId)
-    console.log("num", num)
-    
+    setCurrentAnswerId(answerId - 1);
   };
-  console.log("selectedAnswer", birdsData[currentRoundIndex][currentAnswerId]);
+
   return (
     <div>
       <Header score={score} currentRoundIndex={currentRoundIndex} />
@@ -45,11 +41,7 @@ const App = () => {
           rightAnswerId={rightAnswerId}
         />
         <Description
-          selectedAnswer={
-            currentAnswerId
-              ? birdsData[currentRoundIndex][currentAnswerId]
-              : null
-          }
+          selectedAnswer={birdsData[currentRoundIndex][currentAnswerId]}
         />
       </div>
       <Button />
