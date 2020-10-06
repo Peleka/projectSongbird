@@ -26,9 +26,12 @@ const App = () => {
     isMarkedClone[answerId] = true;
     setIsMarked(isMarkedClone);
 
-    setCurrentAnswerId(answerId);
+    const num = answerId - 1
+    setCurrentAnswerId(num);
+    console.log("answerId", answerId)
+    console.log("num", num)
+    
   };
-
   console.log("selectedAnswer", birdsData[currentRoundIndex][currentAnswerId]);
   return (
     <div>
