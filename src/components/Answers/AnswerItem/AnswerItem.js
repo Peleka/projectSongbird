@@ -4,7 +4,6 @@ import "./AnswerItem.scss";
 const AnswerItem = (props) => {
   const markedClass = props.isCorrect ? "correct" : "incorrect";
   const className = `circle ${props.isMarked ? markedClass : ""}`;
-
   return (
     <li
       className="AnswerItem"
