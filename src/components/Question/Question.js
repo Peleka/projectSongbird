@@ -4,24 +4,25 @@ import "react-h5-audio-player/src/styles.scss";
 import "./Question.scss";
 import "../../styles/AudioPlayer.scss";
 
-const Question = () => {
-  const rightAnswer = true;
+const Question = (props) => {
+  console.log("rightAnswer", props.rightAnswer);
   return (
     <div>
       <div className="Question__block">
         <div className="Question__dummyImage">
-          {rightAnswer ? (
-            <img
-              src="https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg"
-              alt="Bird"
-            />
+          {props.rightAnswer ? (
+            <img src={props.rightAnswer.image} alt="Bird" />
           ) : (
             <img src="/src/assets/images/bird.jpg" alt="Plag" />
           )}
         </div>
         <div className="Question__dummyAnswer">
-          <h3>{rightAnswer ? "Ворон" : "*******"}</h3>
-          <AudioPlayer src="https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3" />
+          <h3>{props.rightAnswer ? props.rightAnswer.name : "*******"}</h3>
+          {props.rightAnswer ? (
+            <AudioPlayer src={props.rightAnswer.audio} />
+          ) : (
+            <AudioPlayer src={props.rightAnswerPlayer.audio} />
+          )}
         </div>
       </div>
     </div>

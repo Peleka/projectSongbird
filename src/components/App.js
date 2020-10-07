@@ -34,7 +34,22 @@ const App = () => {
   return (
     <div>
       <Header score={score} currentRoundIndex={currentRoundIndex} />
-      <Question />
+      <Question
+        rightAnswer={
+          currentAnswerId === rightAnswerId
+            ? birdsData[currentRoundIndex].find(
+                (item) => item.id === rightAnswerId
+              )
+            : null
+        }
+        rightAnswerPlayer={
+          rightAnswerId
+            ? birdsData[currentRoundIndex].find(
+                (item) => item.id === rightAnswerId
+              )
+            : null
+        }
+      />
       <div className="Wrapper">
         <AnswerList
           answers={birdsData[currentRoundIndex]}
