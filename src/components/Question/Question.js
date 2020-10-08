@@ -10,7 +10,7 @@ const Question = (props) => {
     <div>
       <div className="Question__block">
         <div className="Question__dummyImage">
-          {props.rightAnswerId === props.currentAnswerId ? (
+          {props.rightAnswer.id === props.currentAnswerId ? (
             <img src={props.rightAnswer.image} alt={props.rightAnswer.name} />
           ) : (
             <img src="/src/assets/images/bird.jpg" alt="Plag" />
@@ -18,7 +18,7 @@ const Question = (props) => {
         </div>
         <div className="Question__dummyAnswer">
           <h3>
-            {props.rightAnswerId === props.currentAnswerId
+            {props.rightAnswer.id === props.currentAnswerId
               ? props.rightAnswer.name
               : "*******"}
           </h3>

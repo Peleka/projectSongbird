@@ -43,7 +43,6 @@ const App = () => {
             : null
         }
         currentAnswerId={currentAnswerId}
-        rightAnswerId={rightAnswerId}
       />
       <div className="Wrapper">
         <AnswerList
