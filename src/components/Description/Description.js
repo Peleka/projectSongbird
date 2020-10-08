@@ -13,7 +13,10 @@ const Description = (props) => {
         <div>
           <div className="Description__flex">
             <div className="Description__image">
-              <img src={props.selectedAnswer.image} alt="Bird" />
+              <img
+                src={props.selectedAnswer.image}
+                alt={props.selectedAnswer.name}
+              />
             </div>
             <div>
               <div className="Description__answer">

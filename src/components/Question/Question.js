@@ -10,19 +10,19 @@ const Question = (props) => {
     <div>
       <div className="Question__block">
         <div className="Question__dummyImage">
-          {props.rightAnswer ? (
-            <img src={props.rightAnswer.image} alt="Bird" />
+          {props.rightAnswerId === props.currentAnswerId ? (
+            <img src={props.rightAnswer.image} alt={props.rightAnswer.name} />
           ) : (
             <img src="/src/assets/images/bird.jpg" alt="Plag" />
           )}
         </div>
         <div className="Question__dummyAnswer">
-          <h3>{props.rightAnswer ? props.rightAnswer.name : "*******"}</h3>
-          {props.rightAnswer ? (
-            <AudioPlayer src={props.rightAnswer.audio} />
-          ) : (
-            <AudioPlayer src={props.rightAnswerPlayer.audio} />
-          )}
+          <h3>
+            {props.rightAnswerId === props.currentAnswerId
+              ? props.rightAnswer.name
+              : "*******"}
+          </h3>
+          <AudioPlayer src={props.rightAnswer.audio} />
         </div>
       </div>
     </div>
