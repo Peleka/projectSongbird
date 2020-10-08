@@ -15,6 +15,7 @@ const App = () => {
   const [currentAnswerId, setCurrentAnswerId] = useState(null);
   const [isMarked, setIsMarked] = useState({}); // инфа о текущем клике пользователя
   const [score, setScore] = useState(0); // набранные очки
+  const [answerPoints, setAnswerPoints] = useState(5)
   const [currentRoundIndex, setCurrentRoundIndex] = useState(0); // индекс выбранного раунда
 
   const retryHandler = () => {
@@ -27,8 +28,16 @@ const App = () => {
     setIsMarked(isMarkedClone);
 
     setCurrentAnswerId(answerId);
+
+    if (rightAnswerId === answerId) {
+      setScore(score + answerPoints)
+    } else {
+      setAnswerPoints (answerPoints - 1)
+    }
   };
 
+  console.log("answerPoins", answerPoints)
+  console.log("score", score)
   console.log("Info", currentAnswerId);
   console.log("birdsData[currentRoundIndex],", birdsData[currentRoundIndex]);
   return (
