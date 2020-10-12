@@ -12,9 +12,11 @@ const App = () => {
   const [rightAnswerId, setRightAnswerId] = useState(
     Math.ceil(Math.random() * 6)
   );
+  const [getRightAnswer, setGetRightAnswer] = useState(false);
   const [currentAnswerId, setCurrentAnswerId] = useState(null);
   const [isMarked, setIsMarked] = useState({}); // инфа о текущем клике пользователя
   const [score, setScore] = useState(0); // набранные очки
+  const [answerPoints, setAnswerPoints] = useState(5);
   const [currentRoundIndex, setCurrentRoundIndex] = useState(0); // индекс выбранного раунда
 
   const retryHandler = () => {
@@ -22,11 +24,19 @@ const App = () => {
   };
 
   const onAnswerClickHandler = (answerId) => {
+    if (getRightAnswer) return;
     const isMarkedClone = { ...isMarked };
     isMarkedClone[answerId] = true;
     setIsMarked(isMarkedClone);
 
     setCurrentAnswerId(answerId);
+
+    if (rightAnswerId === answerId) {
+      setScore(score + answerPoints);
+      setGetRightAnswer(true);
+    } else {
+      setAnswerPoints(answerPoints - 1);
+    }
   };
 
   console.log("Info", currentAnswerId);
