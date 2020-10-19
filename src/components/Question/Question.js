@@ -5,7 +5,6 @@ import "./Question.scss";
 import "../../styles/AudioPlayer.scss";
 
 const Question = (props) => {
-  console.log("rightAnswer", props.rightAnswer);
   return (
     <div>
       <div className="Question__block">
