@@ -23,21 +23,17 @@ const App = () => {
   };
 
   const onAnswerClickHandler = (answerId) => {
-    if (!isMarked[rightAnswerId] === true) {
+    setCurrentAnswerId(answerId);
+    if (isMarked[rightAnswerId] !== true) {
       const isMarkedClone = { ...isMarked };
       isMarkedClone[answerId] = true;
       setIsMarked(isMarkedClone);
-
-      setCurrentAnswerId(answerId);
 
       setAttemptsCount(attemptsCount + 1);
 
       if (rightAnswerId === answerId) {
         setScore(score + (5 - attemptsCount));
-      } else {
       }
-    } else {
-      setCurrentAnswerId(answerId);
     }
   };
 
