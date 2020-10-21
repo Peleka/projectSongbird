@@ -16,11 +16,7 @@ const Question = (props) => {
           )}
         </div>
         <div className="Question__dummyAnswer">
-          <h3>
-            {props.gotRightAnswer
-              ? props.rightAnswer.name
-              : "*******"}
-          </h3>
+          <h3>{props.gotRightAnswer ? props.rightAnswer.name : "*******"}</h3>
           <AudioPlayer src={props.rightAnswer.audio} />
         </div>
       </div>
