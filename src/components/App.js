@@ -40,16 +40,13 @@ const App = () => {
   };
 
   const onNextLevelClickHandler = () => {
-    setCurrentRoundIndex((prevRound) => prevRound + 1),
-      setRightAnswerId(Math.ceil(Math.random() * 6)),
-      setIsMarked({}),
-      setCurrentAnswerId(null),
-      setAttemptsCount(0);
+    setCurrentRoundIndex(prevRound => prevRound + 1)
+    setRightAnswerId(Math.ceil(Math.random() * 6))
+    setIsMarked({})
+    setCurrentAnswerId(null)
+    setAttemptsCount(0)
   };
 
-  console.log("rightAnswerId", rightAnswerId);
-  console.log("currentAnswerId", currentAnswerId);
-  console.log("attemptsCount", attemptsCount);
   return (
     <div>
       <Header score={score} currentRoundIndex={currentRoundIndex} />
@@ -81,7 +78,7 @@ const App = () => {
         />
       </div>
       <Button
-        text={"NEXT LEVEL"}
+        text="NEXT LEVEL"
         gotRightAnswer={gotRightAnswer}
         onLevelClick={onNextLevelClickHandler}
       />
