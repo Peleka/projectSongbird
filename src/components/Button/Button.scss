@@ -8,4 +8,10 @@ $br-block: #303030;
   background: $br-block;
   border: 1px solid grey;
   border-radius: 5px;
+
+  &.active {
+    background:#74dfb2;
+  }
 }
+
+

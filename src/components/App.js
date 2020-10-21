@@ -22,6 +22,8 @@ const App = () => {
     console.log("Тут должна быть логика");
   };
 
+  const gotRightAnswer = isMarked[rightAnswerId];
+
   const onAnswerClickHandler = (answerId) => {
     setCurrentAnswerId(answerId);
     if (isMarked[rightAnswerId] !== true) {
@@ -37,6 +39,14 @@ const App = () => {
     }
   };
 
+  const onNextLevelClickHandler = () => {
+    setCurrentRoundIndex((prevRound) => prevRound + 1);
+    setRightAnswerId(Math.ceil(Math.random() * 6));
+    setIsMarked({});
+    setCurrentAnswerId(null);
+    setAttemptsCount(0);
+  };
+
   return (
     <div>
       <Header score={score} currentRoundIndex={currentRoundIndex} />
@@ -48,7 +58,7 @@ const App = () => {
               )
             : null
         }
-        gotRightAnswer={isMarked[rightAnswerId]}
+        gotRightAnswer={gotRightAnswer}
       />
       <div className="Wrapper">
         <AnswerList
@@ -67,7 +77,11 @@ const App = () => {
           }
         />
       </div>
-      <Button text={"NEXT LEVEL"} />
+      <Button
+        text="NEXT LEVEL"
+        gotRightAnswer={gotRightAnswer}
+        onLevelClick={onNextLevelClickHandler}
+      />
       <FinishPage score={score} onRetry={retryHandler} />
     </div>
   );
