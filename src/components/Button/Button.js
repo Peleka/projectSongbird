@@ -4,7 +4,11 @@ import "./Button.scss";
 const Button = (props) => {
   const className = `Button ${props.gotRightAnswer ? "active" : ""}`;
   return (
-    <button className={className} onClick={() => props.onLevelClick()}>
+    <button
+      className={className}
+      onClick={() => props.onLevelClick()}
+      disabled={!props.gotRightAnswer}
+    >
       {props.text}
     </button>
   );
