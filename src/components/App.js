@@ -23,12 +23,12 @@ const App = () => {
   };
 
   const onAnswerClickHandler = (answerId) => {
+    setCurrentAnswerId(answerId);
     if (isMarked[rightAnswerId] !== true) {
       const isMarkedClone = { ...isMarked };
       isMarkedClone[answerId] = true;
       setIsMarked(isMarkedClone);
 
-      setCurrentAnswerId(answerId);
       setAttemptsCount(attemptsCount + 1);
 
       if (rightAnswerId === answerId) {
@@ -48,7 +48,8 @@ const App = () => {
               )
             : null
         }
-        currentAnswerId={currentAnswerId}
+        rightAnswerId={rightAnswerId}
+        isMarked={isMarked}
       />
       <div className="Wrapper">
         <AnswerList
