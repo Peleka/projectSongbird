@@ -40,11 +40,11 @@ const App = () => {
   };
 
   const onNextLevelClickHandler = () => {
-    setCurrentRoundIndex(prevRound => prevRound + 1)
-    setRightAnswerId(Math.ceil(Math.random() * 6))
-    setIsMarked({})
-    setCurrentAnswerId(null)
-    setAttemptsCount(0)
+    setCurrentRoundIndex((prevRound) => prevRound + 1);
+    setRightAnswerId(Math.ceil(Math.random() * 6));
+    setIsMarked({});
+    setCurrentAnswerId(null);
+    setAttemptsCount(0);
   };
 
   return (
