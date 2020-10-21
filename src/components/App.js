@@ -48,8 +48,7 @@ const App = () => {
               )
             : null
         }
-        rightAnswerId={rightAnswerId}
-        isMarked={isMarked}
+        gotRightAnswer={isMarked[rightAnswerId]}
       />
       <div className="Wrapper">
         <AnswerList
