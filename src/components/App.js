@@ -20,7 +20,11 @@ const App = () => {
   const [currentRoundIndex, setCurrentRoundIndex] = useState(0); // индекс выбранного раунда
 
   const retryHandler = () => {
-    console.log("Тут должна быть логика");
+    setIsFinished(false);
+    setRightAnswerId(Math.ceil(Math.random() * 6));
+    setIsMarked({});
+    setCurrentAnswerId(null);
+    setAttemptsCount(0);
   };
 
   const gotRightAnswer = isMarked[rightAnswerId];
@@ -55,8 +59,6 @@ const App = () => {
   const isStateFinished = () => {
     return currentRoundIndex + 1 === birdsData[currentRoundIndex].length;
   };
-
-  console.log("length", birdsData[currentRoundIndex].length);
 
   return (
     <div>
