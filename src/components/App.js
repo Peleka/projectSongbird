@@ -26,6 +26,8 @@ const App = () => {
   }
 
   const retryHandler = () => {
+    !isFinished;
+    setCurrentRoundIndex(0);
     setToDefaultProps();
   };
 
