@@ -30,6 +30,7 @@ const App = () => {
   };
 
   const gotRightAnswer = isMarked[rightAnswerId];
+  const isFinished = currentRoundIndex === birdsData.length;
 
   const onAnswerClickHandler = (answerId) => {
     setCurrentAnswerId(answerId);
@@ -47,7 +48,7 @@ const App = () => {
   };
 
   const onNextLevelClickHandler = () => {
-    if (currentRoundIndex + 1 !== birdsData.length + 1) {
+    if (!isFinished) {
       setCurrentRoundIndex((prevRound) => prevRound + 1);
       setToDefaultProps();
     }
@@ -56,7 +57,7 @@ const App = () => {
   return (
     <div>
       <Header score={score} currentRoundIndex={currentRoundIndex} />
-      {currentRoundIndex + 1 !== birdsData.length + 1 ? (
+      {!isFinished ? (
         <div>
           <Question
             rightAnswer={
