@@ -12,19 +12,21 @@ const App = () => {
   const [rightAnswerId, setRightAnswerId] = useState(
     Math.ceil(Math.random() * 6)
   );
-  const [isFinished, setIsFinished] = useState(false);
   const [attemptsCount, setAttemptsCount] = useState(0);
   const [currentAnswerId, setCurrentAnswerId] = useState(null);
   const [isMarked, setIsMarked] = useState({}); // инфа о текущем клике пользователя
   const [score, setScore] = useState(0); // набранные очки
   const [currentRoundIndex, setCurrentRoundIndex] = useState(0); // индекс выбранного раунда
 
-  const retryHandler = () => {
-    setIsFinished(false);
+  function setToDefaultProps() {
     setRightAnswerId(Math.ceil(Math.random() * 6));
     setIsMarked({});
     setCurrentAnswerId(null);
     setAttemptsCount(0);
+  }
+
+  const retryHandler = () => {
+    setToDefaultProps();
   };
 
   const gotRightAnswer = isMarked[rightAnswerId];
@@ -45,31 +47,16 @@ const App = () => {
   };
 
   const onNextLevelClickHandler = () => {
-    if (isStateFinished()) {
-      setIsFinished(true);
-    } else {
+    if (currentRoundIndex + 1 !== birdsData.length + 1) {
       setCurrentRoundIndex((prevRound) => prevRound + 1);
-      setRightAnswerId(Math.ceil(Math.random() * 6));
-      setIsMarked({});
-      setCurrentAnswerId(null);
-      setAttemptsCount(0);
+      setToDefaultProps();
     }
-  };
-
-  const isStateFinished = () => {
-    return currentRoundIndex + 1 === birdsData[currentRoundIndex].length;
   };
 
   return (
     <div>
       <Header score={score} currentRoundIndex={currentRoundIndex} />
-      {isFinished ? (
-        <FinishPage
-          score={score}
-          onRetry={retryHandler}
-          isFinished={isFinished}
-        />
-      ) : (
+      {currentRoundIndex + 1 !== birdsData.length + 1 ? (
         <div>
           <Question
             rightAnswer={
@@ -104,6 +91,8 @@ const App = () => {
             onLevelClick={onNextLevelClickHandler}
           />
         </div>
+      ) : (
+        <FinishPage score={score} onRetry={retryHandler} />
       )}
     </div>
   );
