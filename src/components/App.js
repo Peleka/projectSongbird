@@ -26,10 +26,8 @@ const App = () => {
   }
 
   const retryHandler = () => {
-    
     setCurrentRoundIndex(0);
     setToDefaultProps();
-    !isFinished;
   };
 
   const gotRightAnswer = isMarked[rightAnswerId];
