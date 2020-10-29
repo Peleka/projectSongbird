@@ -18,11 +18,20 @@ const App = () => {
   const [score, setScore] = useState(0); // набранные очки
   const [currentRoundIndex, setCurrentRoundIndex] = useState(0); // индекс выбранного раунда
 
+  function setToDefaultProps() {
+    setRightAnswerId(Math.ceil(Math.random() * 6));
+    setIsMarked({});
+    setCurrentAnswerId(null);
+    setAttemptsCount(0);
+  }
+
   const retryHandler = () => {
-    console.log("Тут должна быть логика");
+    setCurrentRoundIndex(0);
+    setToDefaultProps();
   };
 
   const gotRightAnswer = isMarked[rightAnswerId];
+  const isFinished = currentRoundIndex === birdsData.length;
 
   const onAnswerClickHandler = (answerId) => {
     setCurrentAnswerId(answerId);
@@ -40,49 +49,53 @@ const App = () => {
   };
 
   const onNextLevelClickHandler = () => {
-    setCurrentRoundIndex((prevRound) => prevRound + 1);
-    setRightAnswerId(Math.ceil(Math.random() * 6));
-    setIsMarked({});
-    setCurrentAnswerId(null);
-    setAttemptsCount(0);
+    if (!isFinished) {
+      setCurrentRoundIndex((prevRound) => prevRound + 1);
+      setToDefaultProps();
+    }
   };
 
   return (
     <div>
       <Header score={score} currentRoundIndex={currentRoundIndex} />
-      <Question
-        rightAnswer={
-          rightAnswerId
-            ? birdsData[currentRoundIndex].find(
-                (item) => item.id === rightAnswerId
-              )
-            : null
-        }
-        gotRightAnswer={gotRightAnswer}
-      />
-      <div className="Wrapper">
-        <AnswerList
-          answers={birdsData[currentRoundIndex]}
-          onAnswerClick={onAnswerClickHandler}
-          isMarked={isMarked}
-          rightAnswerId={rightAnswerId}
-        />
-        <Description
-          selectedAnswer={
-            currentAnswerId
-              ? birdsData[currentRoundIndex].find(
-                  (item) => item.id === currentAnswerId
-                )
-              : null
-          }
-        />
-      </div>
-      <Button
-        text="NEXT LEVEL"
-        gotRightAnswer={gotRightAnswer}
-        onLevelClick={onNextLevelClickHandler}
-      />
-      <FinishPage score={score} onRetry={retryHandler} />
+      {!isFinished ? (
+        <div>
+          <Question
+            rightAnswer={
+              rightAnswerId
+                ? birdsData[currentRoundIndex].find(
+                    (item) => item.id === rightAnswerId
+                  )
+                : null
+            }
+            gotRightAnswer={gotRightAnswer}
+          />
+          <div className="Wrapper">
+            <AnswerList
+              answers={birdsData[currentRoundIndex]}
+              onAnswerClick={onAnswerClickHandler}
+              isMarked={isMarked}
+              rightAnswerId={rightAnswerId}
+            />
+            <Description
+              selectedAnswer={
+                currentAnswerId
+                  ? birdsData[currentRoundIndex].find(
+                      (item) => item.id === currentAnswerId
+                    )
+                  : null
+              }
+            />
+          </div>
+          <Button
+            text="NEXT LEVEL"
+            gotRightAnswer={gotRightAnswer}
+            onLevelClick={onNextLevelClickHandler}
+          />
+        </div>
+      ) : (
+        <FinishPage score={score} onRetry={retryHandler} />
+      )}
     </div>
   );
 };
