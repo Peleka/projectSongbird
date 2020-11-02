@@ -36,7 +36,7 @@ const App = () => {
 
   const onAnswerClickHandler = (answerId) => {
     setCurrentAnswerId(answerId);
-    if (isMarked[rightAnswerId] !== true) {
+    if (gotRightAnswer !== true) {
       const isMarkedClone = { ...isMarked };
       isMarkedClone[answerId] = true;
       setIsMarked(isMarkedClone);
@@ -45,9 +45,6 @@ const App = () => {
 
       if (rightAnswerId === answerId) {
         setScore(score + (5 - attemptsCount));
-        new Audio("../src/assets/audio/audioCorrect.mp3").play();
-      } else {
-        new Audio("../src/assets/audio/audioIncorrect.mp3").play();
       }
     }
   };
