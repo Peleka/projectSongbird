@@ -45,6 +45,9 @@ const App = () => {
 
       if (rightAnswerId === answerId) {
         setScore(score + (5 - attemptsCount));
+        new Audio("../src/assets/audio/audioCorrect.mp3").play();
+      } else {
+        new Audio("../src/assets/audio/audioIncorrect.mp3").play();
       }
     }
   };
@@ -56,6 +59,7 @@ const App = () => {
     }
   };
 
+  console.log(rightAnswerId);
   return (
     <div>
       <Header score={score} currentRoundIndex={currentRoundIndex} />
