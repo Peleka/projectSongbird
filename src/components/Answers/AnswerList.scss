@@ -9,4 +9,8 @@ $br-block: #303030;
   border: 1px solid grey;
   border-radius: 5px;
   list-style-type: none;
+
+  &__player {
+    display: none;
+  }
 }
