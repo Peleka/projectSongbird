@@ -78,6 +78,7 @@ const App = () => {
               onAnswerClick={onAnswerClickHandler}
               isMarked={isMarked}
               rightAnswerId={rightAnswerId}
+              gotRightAnswer={gotRightAnswer}
             />
             <Description
               selectedAnswer={
