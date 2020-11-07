@@ -9,7 +9,6 @@ const AnswerItem = (props) => {
       className="AnswerItem"
       onClick={() => {
         props.onAnswerClick(props.answer.id);
-        props.onClickAudio();
       }}
     >
       <span className={className}></span>
