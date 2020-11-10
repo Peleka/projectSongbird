@@ -3,18 +3,15 @@ import "./AnswerList.scss";
 import AnswerItem from "./AnswerItem/AnswerItem";
 
 const AnswerList = (props) => {
-  const { currentAnswerId, isMarked, rightAnswerId } = props;
-  const audio = new Audio();
-
-  useEffect(() => {
-    if (currentAnswerId !== null) {
+  const onClickAudio = (answerId) => {
+    const audio = new Audio();
+    audio.src = "/src/assets/audio/audioCorrect.mp3";
+    if (answerId !== props.rightAnswerId) {
       audio.src = "/src/assets/audio/audioIncorrect.mp3";
-      if (isMarked[rightAnswerId]) {
-        audio.src = "/src/assets/audio/audioCorrect.mp3";
-      }
-      audio.play();
     }
-  }, [isMarked]);
+    audio.play();
+    props.onAnswerClick(answerId);
+  };
 
   return (
     <ul className="AnswerList">
@@ -23,7 +20,7 @@ const AnswerList = (props) => {
           <AnswerItem
             key={index}
             answer={answer}
-            onAnswerClick={props.onAnswerClick}
+            onClick={onClickAudio}
             isMarked={!!props.isMarked[answer.id]}
             isCorrect={props.rightAnswerId === answer.id}
           />

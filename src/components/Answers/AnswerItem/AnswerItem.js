@@ -8,7 +8,7 @@ const AnswerItem = (props) => {
     <li
       className="AnswerItem"
       onClick={() => {
-        props.onAnswerClick(props.answer.id);
+        props.onClick(props.answer.id);
       }}
     >
       <span className={className}></span>
