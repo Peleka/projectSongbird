@@ -56,7 +56,6 @@ const App = () => {
     }
   };
 
-  console.log(rightAnswerId);
   return (
     <div>
       <Header score={score} currentRoundIndex={currentRoundIndex} />
@@ -70,7 +69,6 @@ const App = () => {
                   )
                 : null
             }
-            gotRightAnswer={gotRightAnswer}
           />
           <div className="Wrapper">
             <AnswerList
@@ -78,7 +76,7 @@ const App = () => {
               onAnswerClick={onAnswerClickHandler}
               isMarked={isMarked}
               rightAnswerId={rightAnswerId}
-              currentAnswerId={currentAnswerId}
+              gotRightAnswer={gotRightAnswer}
             />
             <Description
               selectedAnswer={
