@@ -3,17 +3,18 @@ import "./AnswerList.scss";
 import AnswerItem from "./AnswerItem/AnswerItem";
 
 const AnswerList = (props) => {
+  const { isMarked, rightAnswerId } = props;
+
   const onClickAudio = (answerId) => {
-    if (props.gotRightAnswer) return;
-    else {
+    if (!isMarked[rightAnswerId]) {
       const audio = new Audio();
       audio.src = "/src/assets/audio/audioCorrect.mp3";
-      if (answerId !== props.rightAnswerId) {
+      if (answerId !== rightAnswerId) {
         audio.src = "/src/assets/audio/audioIncorrect.mp3";
       }
       audio.play();
-      props.onAnswerClick(answerId);
     }
+    props.onAnswerClick(answerId);
   };
 
   return (
