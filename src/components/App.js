@@ -28,6 +28,7 @@ const App = () => {
   const retryHandler = () => {
     setCurrentRoundIndex(0);
     setToDefaultProps();
+    setScore(0);
   };
 
   const gotRightAnswer = isMarked[rightAnswerId];
@@ -35,7 +36,7 @@ const App = () => {
 
   const onAnswerClickHandler = (answerId) => {
     setCurrentAnswerId(answerId);
-    if (isMarked[rightAnswerId] !== true) {
+    if (gotRightAnswer !== true) {
       const isMarkedClone = { ...isMarked };
       isMarkedClone[answerId] = true;
       setIsMarked(isMarkedClone);
@@ -68,7 +69,6 @@ const App = () => {
                   )
                 : null
             }
-            gotRightAnswer={gotRightAnswer}
           />
           <div className="Wrapper">
             <AnswerList
